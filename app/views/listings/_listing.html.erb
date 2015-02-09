@@ -1,0 +1,13 @@
+<li id="listing-<%= listing.id %>">
+  <%= link_to gravatar_for(listing.user, size: 50), listing.user %>
+  <span class="user"><%=  listing.user.name %></span>
+  <td><%= link_to listing.title, listing %></td>
+  <td class="text-right">
+    <% if listing.price %>
+    <%= number_to_currency(listing.price) %>
+    <% end %>
+  </td>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(listing.created_at) %> ago.
+  </span>
+</li>

@@ -1,0 +1,11 @@
+.listings{ng:{controller:'listings/index'}}
+  %h1 Listings
+  %table.table.table-striped
+    %tbody
+      %tr{ng:{repeat: 'listing in listings'}}
+        %td
+          %a{ng:{href:'/listings{{listing.id}}'}} {{listing.title}}
+        %td.text-right
+          {{listing.price | currency}}
+        %td /mo.
+  #product-modal.modal.hide.fade

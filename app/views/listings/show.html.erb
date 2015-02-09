@@ -1,0 +1,25 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @model.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @model.description %>
+</p>
+
+<% if @model.price %>
+<p>
+  <strong>Price:</strong>
+  <%= number_to_currency(@model.price) %>
+  <strong> /mo.</strong>
+</p>
+<% end %>
+<% if current_user == @model.user %>
+<%= link_to 'Edit', edit_listing_path(@model), class: 'btn btn-default' %>
+<%= link_to 'Delete', @model, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+
+<% else %>
+<%= link_to 'Place a Down Payment', order_path(@model), class: 'btn btn-default' %>
+<% end %>

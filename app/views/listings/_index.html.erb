@@ -1,0 +1,8 @@
+<% @models.each do |listing| %>
+<tr>
+  <td><%= listing.title %></td>
+  <td><%= number_to_currency listing.price %></td>
+  <td><%= link_to "Edit", edit_path(listing), remote: true%></td>
+  <td><%= link_to "Delete", destroy_path(listing), remote: true%></td>
+</tr>
+<% end %>

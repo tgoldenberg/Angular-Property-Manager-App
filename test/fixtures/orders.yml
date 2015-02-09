@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address: MyText
+  references: MyText
+  pay_type: MyString
+
+two:
+  address: MyText
+  references: MyText
+  pay_type: MyString
